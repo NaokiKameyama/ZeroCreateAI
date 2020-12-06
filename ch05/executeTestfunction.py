@@ -1,0 +1,3 @@
+import testfunction
+
+testfunction.test()

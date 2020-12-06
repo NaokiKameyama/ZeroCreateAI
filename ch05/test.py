@@ -85,9 +85,14 @@ i = 0
 (x_train, t_train), (x_test, t_test) = \
   load_mnist(flatten=True, normalize=False)
 
-for x in range( int(num/2) ):
-    chrImg = ConvertToImg(x_test[i].reshape(chr_w, chr_h))
-    canvas.paste(chrImg, (chr_w*x, chr_h))
+# for x in range( int(num/2) ):
+#     chrImg = ConvertToImg(x_test[i].reshape(chr_w, chr_h))
+#     canvas.paste(chrImg, (chr_w*x, chr_h))
+#     i = i + 1
+
+for item in batch_mask:
+    chrImg = ConvertToImg(x_test[item].reshape(chr_w, chr_h))
+    canvas.paste(chrImg, (chr_w*i, chr_h))
     i = i + 1
 
 canvas.show()
